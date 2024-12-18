@@ -1,0 +1,10 @@
+sudo lsof -i :6379
+
+docker start my-redis
+docker stop my-redis
+docker exec -it my-redis redis-cli
+
+LRANGE 0 0 -1
+LRANGE 0 -5 -1
+DEL 0
+FLUSHALL
